@@ -6,7 +6,7 @@ This project is a simplified backend system similar to Twitter, built using Node
 
 Check out the live demo [here](https://healthflex.vercel.app/).
 
-## Features
+## I have published my postman collection where the requests are made on 
 
 - User Registration
 - User Login
@@ -15,6 +15,8 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 - Basic Authentication with JWT
 - Cursor-based Pagination
 - MongoDB Indexing
+
+## Postman link - https://documenter.getpostman.com/view/29744065/2sA3XLDPFa
 
 ## Requirements
 
