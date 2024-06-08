@@ -27,8 +27,8 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/twitter-like-backend.git
-   cd twitter-like-backend
+   git clone https://github.com/Badarijitwta/healthflex.git
+   cd healthflex
    ```
 
 2. **Install dependencies**:
