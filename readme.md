@@ -114,7 +114,7 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 **Headers:**
 
 ```
-Authorization: Bearer <your_jwt_token>
+Authorization:  <your_jwt_token>
 ```
 
 **Body (JSON):**
@@ -144,7 +144,7 @@ Authorization: Bearer <your_jwt_token>
 **Headers:**
 
 ```
-Authorization: Bearer <your_jwt_token>
+Authorization:  <your_jwt_token>
 ```
 
 **Params:**
@@ -155,3 +155,87 @@ Authorization: Bearer <your_jwt_token>
 
 - `cursor` (optional): The ID of the last tweet from the previous request.
 - `limit` (optional): The number of tweets to fetch. Default is 10
+
+# Testing with Postman
+
+## Import the collection: Download the Postman collection from here and import it into Postman.
+
+## Set environment variables:
+
+## `Authorization: <your_jwt_token> (obtained from the login endpoint)`
+
+**Make Requests**:
+
+1. Register a new user.
+2. Login to get the JWT token.
+3. Post a tweet.
+4. Fetch the user timeline.
+
+### Example Requests
+
+1. **_Register User_**:
+
+- Method: POST
+- URL: https://healthflex.vercel.app/api/users/register
+- Body:
+
+```json
+{
+  "username": "testuser",
+  "password": "Test@1234"
+}
+```
+
+2. **_Login User_**
+
+- Method: POST
+- URL: https://healthflex.vercel.app/api/users/login
+- Body:
+
+```json
+{
+  "username": "testuser",
+  "password": "Test@1234"
+}
+```
+
+3. **_Post Tweet_**
+
+- Method: POST
+- URL: https://healthflex.vercel.app/api/tweets
+- Headers:
+
+```
+Authorization:  <your_jwt_token>
+```
+
+Body:
+
+```json
+{
+  "text": "This is a sample tweet"
+}
+```
+
+4. **_Fetch Timeline_**
+
+- Method: GET
+- URL: https://healthflex.vercel.app/api/users/<user_id>/timeline
+- Headers:
+
+```makefile
+Authorization: Bearer <your_jwt_token>
+```
+
+- Query Params:
+
+```
+limit: 10
+cursor: <last_tweet_id>
+```
+
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
