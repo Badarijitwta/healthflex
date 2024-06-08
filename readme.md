@@ -33,38 +33,32 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 
 2. **Install dependencies**:
 
-```bash
-  npm install
-```
+   ```bash
+     npm install
+   ```
 
 3. **Create a .env file in the root directory and add the following environment variables**:
 
-.env
-`bash
-    PORT=5000
-    MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
-    JWT_SECRET=your_jwt_secret
-    AUTH_PASS=your_pass
-    `
+   ```bash
+       PORT=5000
+       MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
+       JWT_SECRET=your_jwt_secret
+       AUTH_PASS=your_pass
+   ```
 
-4. **Start the server**:
-
-```bash
-  npm start
-```
-
-5. **Configuration**:
-   Database Connection: Update MONGO_URI in the .env file with your MongoDB connection string.
+4. **Configuration**:
+   Database Connection: Update MONGO_URI in the .env file with your MongoDB connection string. <br/>
    JWT Secret: Set JWT_SECRET in the .env file to a secure string for JWT token generation.
 
-6. **Running the Project**:
+5. **Running the Project**:
+
    **_Start the server_**:
 
-```bash
-npm start
-```
+   ```bash
+   npm start
+   ```
 
-The server will start at http://localhost:5000.
+   The server will start at http://localhost:5000.
 
 API Endpoints
 User Registration
