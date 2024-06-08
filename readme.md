@@ -34,21 +34,21 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 2. **Install dependencies**:
 
    ```bash
-     npm install
+   npm install
    ```
 
 3. **Create a .env file in the root directory and add the following environment variables**:
 
    ```bash
-       PORT=5000
-       MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
-       JWT_SECRET=your_jwt_secret
-       AUTH_PASS=your_pass
+   PORT=5000
+   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
+   JWT_SECRET=your_jwt_secret
+   AUTH_PASS=your_pass
    ```
 
-4. **Configuration**:
+4. **Configuration**:<br/>
    Database Connection: Update MONGO_URI in the .env file with your MongoDB connection string. <br/>
-   JWT Secret: Set JWT_SECRET in the .env file to a secure string for JWT token generation.
+   JWT Secret: Set JWT_SECRET in the .env file to a secure string for JWT token generation.<br/>
 
 5. **Running the Project**:
 
@@ -60,141 +60,98 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 
    The server will start at http://localhost:5000.
 
-API Endpoints
-User Registration
-URL: /api/users/register
-Method: POST
-Body (JSON):
-json
-Copy code
-{
-"username": "yourusername",
-"password": "yourpassword"
-}
-Response:
-json
-Copy code
-{
-"message": "User registered successfully"
-}
-User Login
-URL: /api/users/login
-Method: POST
-Body (JSON):
-json
-Copy code
-{
-"username": "yourusername",
-"password": "yourpassword"
-}
-Response:
-json
-Copy code
-{
-"token": "your_jwt_token"
-}
-Post a Tweet
-URL: /api/tweets
-Method: POST
-Headers:
-Authorization: Bearer <your_jwt_token>
-Body (JSON):
-json
-Copy code
-{
-"text": "This is a sample tweet"
-}
-Response:
-json
-Copy code
-{
-"\_id": "tweet_id",
-"userId": "user_id",
-"text": "This is a sample tweet",
-"createdAt": "2024-06-08T10:00:00.000Z"
-}
-Fetch User Timeline
-URL: /api/users/:userId/timeline
-Method: GET
-Headers:
-Authorization: Bearer <your_jwt_token>
-Params:
-userId: user_id
-Query Params:
-cursor (optional): The ID of the last tweet from the previous request.
-limit (optional): The number of tweets to fetch. Default is 10.
-Response:
-json
-Copy code
-[
-{
-"_id": "tweet_id",
-"userId": "user_id",
-"text": "This is a sample tweet",
-"createdAt": "2024-06-08T10:00:00.000Z"
-},
-...
-]
-Testing with Postman
-Import the collection: Download the Postman collection from here and import it into Postman.
-Set environment variables:
-Authorization: Bearer <your_jwt_token> (obtained from the login endpoint).
-Make requests:
-Register a new user.
-Login to get the JWT token.
-Post a tweet.
-Fetch the user timeline.
-Example Requests
-Register User
-Method: POST
-URL: https://healthflex.vercel.app/api/users/register
-Body:
-json
-Copy code
-{
-"username": "testuser",
-"password": "Test@1234"
-}
-Login User
-Method: POST
-URL: https://healthflex.vercel.app/api/users/login
-Body:
-json
-Copy code
-{
-"username": "testuser",
-"password": "Test@1234"
-}
-Post Tweet
-Method: POST
-URL: https://healthflex.vercel.app/api/tweets
-Headers:
-Authorization: Bearer <your_jwt_token>
-Body:
-json
-Copy code
-{
-"text": "This is a sample tweet"
-}
-Fetch Timeline
-Method: GET
-URL: https://healthflex.vercel.app/api/users/<user_id>/timeline
-Headers:
-Authorization: Bearer <your_jwt_token>
-Query Params:
-limit: 10
-cursor: <last_tweet_id>
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+# API Endpoints
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## User Registration
 
-perl
-Copy code
+**URL:** `/api/users/register`  
+**Method:** `POST`
 
-Make sure to replace the placeholder values like `<your_jwt_token>`, `<user_id>`, `<last_tweet>
+**Body (JSON):**
 
+```json
+{
+  "username": "yourusername",
+  "password": "yourpassword"
+}
 ```
 
+**Response:**
+
+```json
+{
+  "message": "User registered successfully"
+}
 ```
+
+## User Login
+
+**URL:** `/api/users/login`  
+**Method:** `POST`
+
+**Body (JSON):**
+
+```json
+{
+  "username": "yourusername",
+  "password": "yourpassword"
+}
+```
+
+**Response:**
+
+```json
+{
+  "token": "your_jwt_token"
+}
+```
+
+## Post a Tweet
+
+**URL:** `/api/tweets`  
+**Method:** `POST`
+
+**Headers:**
+
+```
+Authorization: Bearer <your_jwt_token>
+```
+
+**Body (JSON):**
+
+```json
+{
+  "text": "This is a sample tweet"
+}
+```
+
+**Response:**
+
+```json
+{
+  "_id": "tweet_id",
+  "userId": "user_id",
+  "text": "This is a sample tweet",
+  "createdAt": "2024-06-08T10:00:00.000Z"
+}
+```
+
+## Fetch User Timeline
+
+**URL:** `/api/users/:userId/timeline`  
+**Method:** `GET`
+
+**Headers:**
+
+```
+Authorization: Bearer <your_jwt_token>
+```
+
+**Params:**
+
+- `userId`: user_id
+
+**Query Params:**
+
+- `cursor` (optional): The ID of the last tweet from the previous request.
+- `limit` (optional): The number of tweets to fetch. Default is 10
