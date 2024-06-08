@@ -25,36 +25,45 @@ Check out the live demo [here](https://healthflex.vercel.app/).
 ## Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/yourusername/twitter-like-backend.git
    cd twitter-like-backend
-   Install dependencies:
    ```
 
-bash
-Copy code
-npm install
-Create a .env file in the root directory and add the following environment variables:
+2. **Install dependencies**:
 
-env
-Copy code
-PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
-JWT_SECRET=your_jwt_secret
-Start the server:
+```bash
+  npm install
+```
 
-bash
-Copy code
+3. **Create a .env file in the root directory and add the following environment variables**:
+
+.env
+`bash
+    PORT=5000
+    MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=twitter-simplified
+    JWT_SECRET=your_jwt_secret
+    AUTH_PASS=your_pass
+    `
+
+4. **Start the server**:
+
+```bash
+  npm start
+```
+
+5. **Configuration**:
+   Database Connection: Update MONGO_URI in the .env file with your MongoDB connection string.
+   JWT Secret: Set JWT_SECRET in the .env file to a secure string for JWT token generation.
+
+6. **Running the Project**:
+   **_Start the server_**:
+
+```bash
 npm start
-Configuration
-Database Connection: Update MONGO_URI in the .env file with your MongoDB connection string.
-JWT Secret: Set JWT_SECRET in the .env file to a secure string for JWT token generation.
-Running the Project
-Start the server:
+```
 
-bash
-Copy code
-npm start
 The server will start at http://localhost:5000.
 
 API Endpoints
@@ -191,3 +200,7 @@ perl
 Copy code
 
 Make sure to replace the placeholder values like `<your_jwt_token>`, `<user_id>`, `<last_tweet>
+
+```
+
+```
